@@ -159,5 +159,13 @@ poetry run pytest tests/ -v
 
 ## Security Notes
 
-> ⚠️ The `SECRET_KEY` in `app/auth.py` is for demonstration purposes only.  
-> In production, load it from an environment variable (e.g. `os.getenv("SECRET_KEY")`).
+> ⚠️ Always set the `SECRET_KEY` environment variable to a strong random value in production.  
+> The application falls back to a hard-coded development key when `SECRET_KEY` is not set, which **must not** be used in production.
+
+```bash
+# Generate a strong key:
+python -c "import secrets; print(secrets.token_hex(32))"
+
+# Pass it to Docker Compose:
+SECRET_KEY=<your-key> docker compose up
+```

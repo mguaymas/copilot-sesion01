@@ -1,11 +1,14 @@
+import os
 from datetime import datetime, timedelta, timezone
 from typing import Optional
 
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 
-# Secret key for signing JWTs — change this in production
-SECRET_KEY = "supersecretkey1234567890abcdef1234567890"
+# Secret key for signing JWTs — loaded from the environment, with a fallback
+# for local development only. Always set SECRET_KEY in production.
+_default_key = "dev-only-insecure-secret-key-change-me"
+SECRET_KEY = os.getenv("SECRET_KEY", _default_key)
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_SECONDS = 300
 REFRESH_TOKEN_EXPIRE_SECONDS = 7 * 24 * 3600  # 7 days
