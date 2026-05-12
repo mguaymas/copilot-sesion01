@@ -1,0 +1,180 @@
+/* Login page — Stripi design system */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-canvas);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient mesh backdrop */
+.mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56%;
+  background:
+    radial-gradient(ellipse 60% 80% at 10% 20%, #f5e9d4 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 30% 0%, #fcd5b0 0%, transparent 55%),
+    radial-gradient(ellipse 55% 60% at 60% 10%, #d4c5fd 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 80% 20%, #533afd44 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 95% 5%,  #ea226133 0%, transparent 55%);
+  filter: blur(24px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+}
+
+/* Card */
+.card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: rgba(0, 55, 112, 0.08) 0 8px 24px, rgba(0, 55, 112, 0.04) 0 2px 6px;
+}
+
+/* Logo row */
+.logoRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: -0.2px;
+  color: var(--color-ink);
+}
+
+/* Headings */
+.heading {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -0.64px;
+  line-height: 1.1;
+  color: var(--color-ink);
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.subheading {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--color-ink-mute);
+  text-align: center;
+  margin: 0 0 32px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-ink-secondary);
+  letter-spacing: -0.39px;
+}
+
+.input {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 8px 12px;
+  border: 1px solid var(--color-hairline-input);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.15s;
+  min-height: 40px;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+}
+
+.input::placeholder {
+  color: var(--color-ink-mute);
+  opacity: 1;
+}
+
+/* Error box */
+.errorBox {
+  background: #fff0f3;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #b91c1c;
+}
+
+/* Primary button */
+.btnPrimary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  min-height: 40px;
+  transition: background 0.15s, opacity 0.15s;
+  letter-spacing: 0;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background: var(--color-primary-deep);
+}
+
+.btnPrimary:active:not(:disabled) {
+  background: var(--color-primary-press);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card {
+    padding: 32px 24px;
+  }
+
+  .heading {
+    font-size: 26px;
+    letter-spacing: -0.26px;
+  }
+}
