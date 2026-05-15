@@ -156,6 +156,123 @@
   color: var(--color-ink-secondary);
 }
 
+/* Microsoft Certifications */
+.certSection {
+  margin-bottom: 64px;
+}
+
+.certHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.certHeading {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -0.64px;
+  color: var(--color-ink);
+  margin: 12px 0 8px;
+}
+
+.certSubtitle {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--color-ink-mute);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.certCard {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: rgba(0, 55, 112, 0.08) 0 1px 3px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.certCard:hover {
+  box-shadow: rgba(0, 55, 112, 0.08) 0 8px 24px, rgba(0, 55, 112, 0.04) 0 2px 6px;
+  transform: translateY(-2px);
+}
+
+.certBadge {
+  display: inline-block;
+  background: #e8f4fd;
+  color: #0078d4;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.certBadgeIntermediate {
+  background: #fff4e6;
+  color: #d87f00;
+}
+
+.certBadgeAdvanced {
+  background: #fce8f4;
+  color: #8b1a6b;
+}
+
+.certIconWrap {
+  margin: 4px 0 2px;
+}
+
+.certTitle {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.22px;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.certName {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.certDesc {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-ink-mute);
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+
+.certLink {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #0078d4;
+  text-decoration: none;
+  margin-top: 4px;
+  transition: color 0.15s;
+}
+
+.certLink:hover {
+  color: #005a9e;
+  text-decoration: underline;
+}
+
 /* Dashboard mockup */
 .mockupSection {
   margin-top: 48px;
@@ -250,6 +367,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .certGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .heroHeading {
     font-size: 36px;
     letter-spacing: -0.72px;
@@ -258,6 +379,10 @@
 
 @media (max-width: 767px) {
   .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .certGrid {
     grid-template-columns: 1fr;
   }
 
